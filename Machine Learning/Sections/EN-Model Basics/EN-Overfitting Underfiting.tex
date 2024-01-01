@@ -1,0 +1,84 @@
+\section{Overfitting}
+    Overfitting (also known as high-variance) is the process where the models perform very well on the training data but not on the evaluation/testing data. This happens because in the training stage the model memorizes the data that is present, but is incapable to generalize unseen examples. When the training algorithm runs on the dataset, through multiple iterations we permit the minimization of overall distance, but if it runs for long it will lead to the minimal overall distance. If it reaches minimal distance, can also be said as cost, the line we get will fit all the points even grabbing the secondary patterns, noise as well that may not be required for the model generalization.
+
+\section{Underfitting}
+    Underfitting occurs when the model could not learn enough patterns, and performs poorly on the training data because it was unable to capture the dominant trend. This case is called underfitting. The model’s poor performance on training data happens because the model is too simple (the input features are not expressive enough) to narrate or describe the target well.
+
+
+\section{Reduce Overfitting}
+    \begin{enumerate}
+        \item Data Augmentation:
+            \begin{itemize}
+                \item Artificially increase the size and diversity of your training data by applying transformations like flipping, rotating, zooming, or adding noise to your existing data points. This helps the model learn generalizable features instead of memorizing specific details.
+            \end{itemize}
+        
+        \item Regularization:
+            \begin{itemize}
+                \item Penalizes complex models, encouraging them to fit the data without memorizing noise. Common techniques include L1 (Lasso) and L2 (Ridge) regularization, which add the sum of absolute or squared feature weights to the cost function.
+            \end{itemize}
+        
+        \item Early Stopping:
+            \begin{itemize}
+                \item Monitor the model's performance on a separate validation set during training. Stop training before the validation error starts increasing, even if the training error keeps decreasing. This prevents the model from memorizing the training data at the expense of generalizability.
+            \end{itemize}
+
+        \item Dropout:
+            \begin{itemize}
+                \item Randomly drop out neurons during training, forcing the model to rely on other features and combinations instead of memorizing specific connections. This encourages robustness and prevents overfitting in neural networks.
+            \end{itemize}
+        
+        \item Feature Selection:
+            \begin{itemize}
+                \item Identify and remove irrelevant or redundant features that contribute little to the model's predictions but increase its complexity. This can be done through techniques like correlation analysis or feature importance scores.
+            \end{itemize}
+
+        \item Model Complexity Control:
+            \begin{itemize}
+                \item Choose a model with the right level of complexity for your problem. Using a model that is too complex for the data is more prone to overfitting. Consider simpler models like linear regression or decision trees for smaller datasets or less complex relationships.
+            \end{itemize}
+        
+        \item Ensembling:
+            \begin{itemize}
+                \item Combine predictions from multiple, diverse models (e.g., bagging, boosting) to reduce variance and improve generalization. This can often outperform individual models and be less susceptible to overfitting.
+            \end{itemize}
+        
+        \item Data Quality and Preprocessing:
+            \begin{itemize}
+                \item Ensure your data is clean and properly preprocessed before training. Missing values, outliers, and inconsistencies can lead to overfitting. Standardize features or scale them to similar ranges to prevent some features from dominating the model.
+            \end{itemize}
+    \end{enumerate}
+
+\section{Reduce Underfitting}
+    \begin{enumerate}
+        \item Increase model complexity:
+            \begin{itemize}
+                \item Increase the number of features: Add relevant features that were not considered initially. This could involve feature engineering to create new features from existing ones.
+                \item Choose a more complex model: For nonlinear relationships, consider switching to models like decision trees, random forests, or neural networks, which have higher expressive power.
+            \end{itemize}
+
+        \item Increase the amount of training data:
+            \begin{itemize}
+                \item Collect more data, ensuring it is representative of the overall population you want to make predictions for.
+                \item Augment your existing data through techniques like oversampling or data synthesis to enrich your training set.
+            \end{itemize}
+        
+        \item Reduce regularization:
+            \begin{itemize}
+                \item Regularization penalties can bias models towards simpler solutions to prevent overfitting. Relaxing the regularization strength (e.g., hyperparameter tuning) can allow the model to capture more complex patterns.
+            \end{itemize}
+        
+        \item Train for longer:
+            \begin{itemize}
+                \item Underfitting can sometimes be due to insufficient training time. Experiment with longer training epochs, but be careful not to overfit.
+            \end{itemize}
+        
+        \item Address data quality issues:
+            \begin{itemize}
+                \item Ensure your data is clean and preprocessed properly. Missing values, outliers, and irrelevant features can hinder model performance.
+            \end{itemize}
+        
+        \item Use ensemble methods:
+            \begin{itemize}
+                \item Combining multiple simpler models like decision trees through techniques like bagging or boosting can often lead to better generalization and reduced underfitting.
+            \end{itemize}
+    \end{enumerate}

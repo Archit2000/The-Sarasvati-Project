@@ -1,0 +1,30 @@
+\section{Bias}
+    Bias is simply defined as the inability of the model because of that there is some difference or error occurring between the model’s predicted value and the actual value. These differences between actual or expected values and the predicted values are known as error or bias error or error due to bias. Bias is a systematic error that occurs due to wrong assumptions in the machine learning process. 
+
+    \begin{itemize}
+        \item Low Bias: Low bias value means fewer assumptions are taken to build the target function. In this case, the model will closely match the training dataset.
+        \item High Bias: High bias value means more assumptions are taken to build the target function. In this case, the model will not match the training dataset closely. 
+    \end{itemize}
+
+    The high-bias model will not be able to capture the dataset trend. It is considered as the underfitting model which has a high error rate. It is due to a very simplified algorithm.
+
+\section{Variance}
+    Variance is the measure of spread in data from its mean position. In machine learning variance is the amount by which the performance of a predictive model changes when it is trained on different subsets of the training data. More specifically, variance is the variability of the model that how much it is sensitive to another subset of the training dataset. i.e. how much it can adjust on the new subset of the training dataset.
+
+    \begin{itemize}
+        \item Low variance: Low variance means that the model is less sensitive to changes in the training data and can produce consistent estimates of the target function with different subsets of data from the same distribution. This is the case of underfitting when the model fails to generalize on both training and test data.
+        \item High variance: High variance means that the model is very sensitive to changes in the training data and can result in significant changes in the estimate of the target function when trained on different subsets of data from the same distribution. This is the case of overfitting when the model performs well on the training data but poorly on new, unseen test data. It fits the training data too closely that it fails on the new training dataset.
+    \end{itemize}
+
+\section{Different Combinations of Bias-Variance}
+    \begin{enumerate}
+        \item High Bias, Low Variance: A model with high bias and low variance is said to be underfitting.
+        \item High Variance, Low Bias: A model with high variance and low bias is said to be overfitting.
+        \item High-Bias, High-Variance: A model has both high bias and high variance, which means that the model is not able to capture the underlying patterns in the data (high bias) and is also too sensitive to changes in the training data (high variance). As a result, the model will produce inconsistent and inaccurate predictions on average.
+        \item Low Bias, Low Variance: A model that has low bias and low variance means that the model is able to capture the underlying patterns in the data (low bias) and is not too sensitive to changes in the training data (low variance). This is the ideal scenario for a machine learning model, as it is able to generalize well to new, unseen data and produce consistent and accurate predictions. But in practice, it’s not possible.
+    \end{enumerate}
+
+    Now we know that the ideal case will be Low Bias and Low variance, but in practice, it is not possible. So, we trade off between Bias and variance to achieve a balanced bias and variance
+
+\section{Bias Variance Tradeoff}
+    If the algorithm is too simple (hypothesis with linear equation) then it may be on high bias and low variance condition and thus is error-prone. If algorithms fit too complex (hypothesis with high degree equation) then it may be on high variance and low bias. In the latter condition, the new entries will not perform well. Well, there is something between both of these conditions, known as a Trade-off or Bias Variance Trade-off. This tradeoff in complexity is why there is a tradeoff between bias and variance.

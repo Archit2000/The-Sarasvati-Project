@@ -1,0 +1,96 @@
+\section{Evalutaion Metric}
+    \subsection{For Classifiation}
+        \subsubsection{Accuracy}
+            \begin{itemize}
+                \item The most basic metric, measuring the proportion of correct predictions made by the model.
+                \item Calculated as: $(True Positives + True Negatives) / Total Predictions$
+                \item It's easy to understand, but can be misleading in imbalanced datasets.
+            \end{itemize}
+        \subsubsection{Precision}
+            \begin{itemize}
+                \item The proportion of true positives among the predicted positives.
+                \item It measures how accurate the model is when it predicts a positive class.
+                \item Calculated as: $True Positives / (True Positives + False Positives)$
+                \item High precision means fewer false positives, crucial for avoiding unnecessary costs or actions.
+            \end{itemize}      
+        \subsubsection{Recall (Sensitivity)}
+            \begin{itemize}
+                \item The proportion of true positives correctly identified by the model.
+                \item It measures how well the model captures all actual positive cases.
+                \item Calculated as: $True Positives / (True Positives + False Negatives)$
+                \item High recall is essential in critical tasks like disease detection or fraud prevention.
+            \end{itemize}
+        \subsubsection{F1-Score}
+            \begin{itemize}
+                \item The harmonic mean of precision and recall, balancing both aspects of performance.
+                \item It provides a single value for evaluating models when both precision and recall are important.
+                \item Calculated as: $2 * (Precision * Recall) / (Precision + Recall)$
+            \end{itemize}
+        \subsubsection{Confusion Matrix}
+            \begin{itemize}
+                \item A table visualizing the distribution of predictions (true positives, true negatives, false positives, false negatives).
+                \item It provides a detailed breakdown of model performance across different classes.
+            \end{itemize}
+        \subsubsection{ROC Curve (Receiver Operating Characteristic)}
+            \begin{itemize}
+                \item What it is:  
+                    \begin{itemize}
+                        \item A plot visualizing the model's performance at various decision thresholds.
+                        \item It shows the trade-off between true positive rate (recall) and false positive rate (1 - specificity).
+                    \end{itemize}
+                
+                \item How it's created:
+                    \begin{itemize}
+                        \item The model assigns a probability or score to each data point, indicating its likelihood of belonging to the positive class.
+                        \item Various decision thresholds are applied to these scores.
+                        \item For each threshold, TPR and FPR are calculated based on the resulting true positives, false positives, true negatives, and false negatives.
+                        \item The ROC curve is then plotted by plotting TPR (y-axis) against FPR (x-axis) for all possible thresholds.
+                    \end{itemize}
+
+                \item Interpreting the ROC curve:
+                    \begin{itemize}
+                        \item Good performance: A curve that climbs steeply towards the top-left corner (high TPR, low FPR) indicates better performance.
+                        \item Diagonal line: A diagonal line (AUC-ROC = 0.5) represents random guessing.
+                        \item Area under the curve (AUC-ROC): A single value summarizing the curve's overall performance. Higher AUC-ROC values (closer to 1) indicate better discrimination between classes.
+                    \end{itemize}
+            \end{itemize}
+        \subsubsection{AUC-ROC (Area Under the ROC Curve)}
+            \begin{itemize}
+                \item A single value summarizing the ROC curve, representing the model's overall ability to distinguish between classes.
+                \item A higher AUC-ROC (closer to 1) indicates better performance.
+            \end{itemize}
+        \subsubsection{Choosing the Right Metrics}
+            \begin{itemize}
+                \item Problem Context: Consider the specific goals of your problem. Do you prioritize identifying all positive cases (high recall) or minimizing false positives (high precision)?
+                \item Data Imbalance: If classes are imbalanced, accuracy can be misleading. Use precision, recall, F1-score, and AUC-ROC for better evaluation.
+                \item Visualization: Use confusion matrices and ROC curves to visualize model performance and identify areas for improvement.
+            \end{itemize}
+
+    \subsection{For Regression}
+        \subsubsection{Mean Squared Error (MSE)}
+            \begin{itemize}
+                \item Measures the average squared difference between the predicted and actual values.
+                \item Lower MSE indicates better fit.
+                \item Sensitive to outliers due to squaring.
+            \end{itemize}
+        \subsubsection{Root Mean Squared Error (RMSE)}
+            \begin{itemize}
+                \item The square root of MSE, providing the error in the same units as the target variable.
+                \item More interpretable than MSE as it measures average error magnitude.
+            \end{itemize}
+        \subsubsection{Mean Absolute Error (MAE)}
+            \begin{itemize}
+                \item Measures the average absolute difference between predicted and actual values.
+                \item Less sensitive to outliers than MSE/RMSE.
+            \end{itemize}
+        \subsubsection{R-squared ($R^2$)}
+            \begin{itemize}
+                \item Represents the proportion of variance in the target variable explained by the model.
+                \item Values range from 0 to 1, with higher values indicating better fit.
+                \item However, be cautious of overfitting, as complex models can have high $R^2$ without generalizing well.
+            \end{itemize}
+        \subsubsection{Adjusted R-squared}
+            \begin{itemize}
+                \item A modified version of $R^2$ that penalizes for the number of features in the model.
+                \item It prevents overestimation of model fit in complex models with many features.
+            \end{itemize}

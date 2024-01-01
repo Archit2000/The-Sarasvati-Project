@@ -1,0 +1,7 @@
+\section{How does Perceptron work?}
+    A weight is assigned to each input node of a perceptron, indicating the significance of that input to the output. The perceptron’s output is a weighted sum of the inputs that have been run through an activation function to decide whether or not the perceptron will fire. it computes the weighted sum of its inputs as:
+    \[z = w_{1}x_{1} + w_{2}x_{2} + \cdots + w_{n}x_{n} = x^Tw\]
+    The step function compares this weighted sum to the threshold, which outputs 1 if the input is larger than a threshold value and 0 otherwise, is the activation function that perceptrons utilize the most frequently. The most common step function used in perceptron is the Heaviside step function:
+    \includegraphics{Heaviside step function.png}
+    A perceptron has a single layer of threshold logic units with each TLU connected to all inputs. 
+

@@ -1,0 +1,8 @@
+\section{What is regularization?}
+    Regularization means restricting a model to avoid overfitting by shrinking the coefficient estimates to zero. When a model suffers from overfitting, we should control the model's complexity. Technically, regularization avoids overfitting by adding a penalty to the model's loss function
+\section{Regularization Techniques}
+    \subsection{Ridge Regularization or L2 Regularization}
+        A linear regression that uses the L2 regularization technique is called ridge regression. In other words, in ridge regression, a regularization term is added to the cost function of the linear regression, which keeps the magnitude of the model’s weights (coefficients) as small as possible. The L2 regularization technique tries to keep the model’s weights close to zero, but not zero, which means each feature should have a low impact on the output while the model's accuracy should be as high as possible.
+        
+        $\text{Ridge Regression Cost Function} = \text{Loss Function} + \dfrac{1}{2} \lambda\sum_{j=1}^m w_j^2$
+

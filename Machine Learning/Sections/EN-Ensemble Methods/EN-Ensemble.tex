@@ -1,0 +1,44 @@
+\section{Ensemble Methods}
+    Ensemble Learning is a machine learning technique where the predictions from various predictors, such as classifiers or regressors, are combined by aggregating the predictions of a set of models to produce outcomes that are superior to those of any individual predictor. The group of predictors is known as an ensemble, where their combined predictions help to improve performance. and the overall algorithm of this ensemble learning is known as an ensemble method. The basic principle of ensemble learning is to combine a number of weak learners into strong learners. 
+    There are two main types of ensemble methods:
+    \begin{enumerate}
+        \item Bagging (Bootstrap Aggregating): In bagging, multiple models are trained on different random subsets of the training data with replacement. The average or majority vote of all the distinct models’ predictions is used to determine the final prediction. Examples of bagging methods are Bagged Decision Trees, Extra Trees, and Random Forests.
+        \item Boosting: In boosting, multiple models are trained sequentially, with each one aiming to fix the mistakes caused by the one before it by assigning higher weights to the misclassified instances and adjusting them during training. The final prediction is produced by weighting each individual model’s prediction according to how accurate it was. Examples of Boosting method is AdaBoost, Gradient Boosting, and XGBoost.
+        \item Stacking (Stacked Generalization): In stacking, The predictions of various models are combined using a meta-model. During stacking, various base models are trained on training data, and their predictions are then used as input features for a more sophisticated model,  known as a blender or meta-model. The meta-model develops the ability to synthesize the basic models’ predictions to arrive at the ultimate conclusion. Stacking enables more complex interactions among the base models and provides enhanced performance.
+    \end{enumerate}
+
+\section{Similarities Between Bagging and Boosting}
+    \begin{enumerate}
+        \item Both are ensemble methods to get N learners from 1 learner.
+        \item Both generate several training data sets by random sampling.
+        \item Both make the final decision by averaging the N learners (or taking the majority of them i.e Majority Voting).
+        \item Both are good at reducing variance and provide higher stability.
+    \end{enumerate}
+
+\section{Differences Between Bagging and Boosting}
+    \begin{center}
+        \begin{tabularx}{0.8\textwidth} { 
+            | >{\raggedright\arraybackslash}X 
+            | >{\raggedright\arraybackslash}X 
+            | } 
+            \hline
+            Bagging & Boosting \\ 
+            \hline
+            The simplest way of combining predictions that belong to the same type.	& A way of combining predictions that belong to the different types.\\
+            \hline
+            Aim to decrease variance, not bias.	& Aim to decrease bias, not variance. \\
+            \hline
+            Each model receives equal weight.	& Models are weighted according to their performance. \\
+            \hline
+            Each model is built independently.	& New models are influenced by the performance of previously built models.\\
+            \hline
+            Different training data subsets are selected using row sampling with replacement and random sampling methods from the entire training dataset. & Every new subset contains the elements that were misclassified by previous models.\\
+            \hline
+            Bagging tries to solve the over-fitting problem. & Boosting tries to reduce bias.\\
+            \hline
+            If the classifier is unstable (high variance), then apply bagging. & If the classifier is stable and simple (high bias) the apply boosting.\\
+            \hline
+            In this base classifiers are trained parallelly. & In this base classifiers are trained sequentially.\\
+            \hline
+        \end{tabularx}
+    \end{center}

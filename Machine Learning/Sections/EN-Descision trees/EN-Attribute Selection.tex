@@ -1,0 +1,69 @@
+\section{Attribute Selection}
+
+    \subsection{Entropy and Information Gain}
+        Here's a simple explanation of entropy in a decision tree, using a fruit basket analogy:
+
+        Imagine a basket full of mixed fruits:
+        \begin{enumerate}
+            \item If it's all apples, there's no surprise when you pick one—it's always an apple. This is like a node with low entropy (more purity).
+            \item If it's half apples and half oranges, there's more uncertainty—you might get either fruit. This is like a node with higher entropy (less purity).
+        \end{enumerate}
+        Entropy is the measure of uncertainty of a random variable, it characterizes the impurity of an arbitrary collection of examples. The higher the entropy more the information content. Entropy can be though of as a measure of disorder or impurity in a node. 
+        Information Gain  = $Entropy_{Parent} - Entropy_{Children}$
+        Decision trees use entropy to make choices:
+        \begin{enumerate}
+            \item They try to split nodes into groups that are more "pure," like sorting the fruits into separate baskets.
+            \item A node with high entropy (mixed fruits) is a good candidate for splitting, as it can lead to more certainty in the branches.
+        \end{enumerate}
+        When we use a node in a decision tree to partition the training instances into smaller subsets the entropy changes. Information gain is a measure of this change in entropy.
+        \begin{itemize}
+            \item Suppose S is a set of instances,
+            \item A is an attribute
+            \item $S_v$ is the subset of S
+            \item v represents an individual value that the attribute A can take and Values (A) is the set of all possible values of A, then
+            \item Refer Formula Sheet.
+        \end{itemize}
+        
+        \subsection{Gini Index}
+        The Gini Index is a measure of the inequality or impurity of a distribution, commonly used in decision trees and other machine learning algorithms. It ranges from 0 to 1, where 0 represents perfect equality (all values are the same) and 1 represents perfect inequality (all values are different).
+        In other words, Gini Index is a metric to measure how often a randomly chosen element would be incorrectly identified.
+        It means an attribute with a lower Gini index should be preferred.
+        Some additional features and characteristics of the Gini Index are:
+        \begin{itemize}
+            \item It is calculated by summing the squared probabilities of each outcome in a distribution and subtracting the result from 1.
+            \item A lower Gini Index indicates a more homogeneous or pure distribution, while a higher Gini Index indicates a more heterogeneous or impure distribution.
+            \item In decision trees, the Gini Index is used to evaluate the quality of a split by measuring the difference between the impurity of the parent node and the weighted impurity of the child nodes.
+            \item Compared to other impurity measures like entropy, the Gini Index is faster to compute and more sensitive to changes in class probabilities.
+            \item One disadvantage of the Gini Index is that it tends to favor splits that create equally sized child nodes, even if they are not optimal for classification accuracy.
+            \item In practice, the choice between using the Gini Index or other impurity measures depends on the specific problem and dataset, and often requires experimentation and tuning.
+        \end{itemize}
+
+    \subsection{Difference between Gini Index and Entropy}
+        \begin{center}
+            \begin{tabularx}{0.8\textwidth} { 
+                | >{\raggedright\arraybackslash}X 
+                | >{\raggedright\arraybackslash}X 
+                | >{\raggedright\arraybackslash}X | } 
+            \hline
+            Gini Index & Entropy \\ 
+            \hline
+            It is the probability of misclassifying a randomly chosen element in a set.	& While entropy measures the amount of uncertainty or randomness in a set.\\
+            \hline
+            The range of the Gini index is [0, 1], where 0 indicates perfect purity and 1 indicates maximum impurity. & The range of entropy is [0, log(c)], where c is the number of classes.\\
+            \hline
+            Gini index is a linear measure.	& Entropy is a logarithmic measure. \\ 
+            \hline
+            It can be interpreted as the expected error rate in a classifier. & It can be interpreted as the average amount of information needed to specify the class of an instance. \\
+            \hline
+            It is sensitive to the distribution of classes in a set. & It is sensitive to the number of classes. \\
+            \hline
+            It is less robust than entropy.	& It is more robust than Gini index.\\
+            \hline
+            It is sensitive. & It is comparatively less sensitive.\\
+            \hline 
+            It has a bias toward selecting splits that result in a more balanced distribution of classes. & It has a bias toward selecting splits that result in a higher reduction of uncertainty.\\
+            \hline
+            Gini index is typically used in CART (Classification and Regression Trees) algorithms & Entropy is typically used in ID3 and C4.5 algorithms. \\
+            \hline
+            \end{tabularx}
+        \end{center}

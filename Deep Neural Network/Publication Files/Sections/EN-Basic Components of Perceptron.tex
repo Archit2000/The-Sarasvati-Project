@@ -1,0 +1,12 @@
+\section{Basic Components of Perceptron}
+    A perceptron, the basic unit of a neural network, comprises essential components that collaborate in information processing.
+    \begin{enumerate}
+        \item \textbf{Input Features:} The perceptron takes multiple input features, each input feature represents a characteristic or attribute of the input data.
+        \item \textbf{Weights:} Each input feature is associated with a weight, determining the significance of each input feature in influencing the perceptron’s output. During training, these weights are adjusted to learn the optimal values.
+        \item \textbf{Summation Function:} The perceptron calculates the weighted sum of its inputs using the summation function. The summation function combines the inputs with their respective weights to produce a weighted sum.
+        \item \textbf{Activation Function:} The weighted sum is then passed through an activation function. Perceptron uses Heaviside step function functions. which take the summed values as input and compare with the threshold and provide the output as 0 or 1.
+        \item \textbf{Output:} The final output of the perceptron, is determined by the activation function’s result. For example, in binary classification problems, the output might represent a predicted class (0 or 1).
+        \item \textbf{Bias:} A bias term is often included in the perceptron model. The bias allows the model to make adjustments that are independent of the input. It is an additional parameter that is learned during training.
+        \item \textbf{Learning Algorithm (Weight Update Rule):} During training, the perceptron learns by adjusting its weights and bias based on a learning algorithm. A common approach is the perceptron learning algorithm, which updates weights based on the difference between the predicted output and the true output.
+    \end{enumerate}
+    These components work together to enable a perceptron to learn and make predictions. While a single perceptron can perform binary classification, more complex tasks require the use of multiple perceptrons organized into layers, forming a neural network.

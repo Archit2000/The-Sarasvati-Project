@@ -1,0 +1,25 @@
+\section{Choosing K}
+    If the true label is not known in advance, then K-Means clustering can be evaluated using Elbow Criterion , Silhouette Coefficient , cross-validation, information criteria, the information theoretic jump method, and the G-means algorithm. .
+    
+    \subsection{Elbow Criterion Method}
+
+        The idea behind elbow method is to run k-means clustering on a given dataset for a range of values of k (e.g k=1 to 10), for each value of k, calculate sum of squared errors (SSE).
+
+        Calculate the mean distance between data points and their cluster centroid. Increasing the number of clusters(K) will always reduce the distance to data points, thus decrease this metric, to the extreme of reaching zero when K is as same as the number of data points. So the goal is to choose a small value of k that still has a low SSE.
+
+        We run the algorithm for different values of K(say K = 10 to 1) and plot the K values against SSE(Sum of Squared Errors). And select the value of K for the elbow point.
+
+    \subsection{Silhouette Coefficient Method}
+
+        A higher Silhouette Coefficient score relates to a model with better-defined clusters. The Silhouette Coefficient is defined for each sample and is composed of two scores:
+        \begin{itemize}
+            \item The mean distance between a sample and all other points in the same class.
+            \item The mean distance between a sample and all other points in the next nearest cluster.
+        \end{itemize}
+        The Silhouette Coefficient is for a single sample is then given as:
+
+
+
+        To find the optimal value of k for KMeans, loop through 1 to n for $n_{clusters}$ in KMeans and calculate Silhouette Coefficient for each sample.
+
+        A higher Silhouette Coefficient indicates that the object is well matched to its own cluster and poorly matched to neighboring clusters.
