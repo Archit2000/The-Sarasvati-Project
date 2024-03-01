@@ -6,8 +6,12 @@
     Dimensionality reduction can help to mitigate these problems by reducing the complexity of the model and improving its generalization performance. There are two main approaches to dimensionality reduction: feature selection and feature extraction.
 
     \subsection{Feature Selection}
-        Feature selection involves selecting a subset of the original features that are most relevant to the problem at hand. The goal is to reduce the dimensionality of the dataset while retaining the most important features. There are several methods for feature selection, including filter methods, wrapper methods, and embedded methods. Filter methods rank the features based on their relevance to the target variable, wrapper methods use the model performance as the criteria for selecting features, and embedded methods combine feature selection with the model training process.
-
+        Feature selection involves selecting a subset of the original features that are most relevant to the problem at hand. The goal is to reduce the dimensionality of the dataset while retaining the most important features. There are several methods for feature selection, including filter methods, wrapper methods, and embedded methods. 
+        \begin{itemize}
+            \item Filter methods rank the features based on their relevance to the target variable.
+            \item Wrapper methods use the model performance as the criteria for selecting features. 
+            \item Embedded methods combine feature selection with the model training process.
+        \end{itemize}
     \subsection{Feature Extraction}
         Feature extraction involves creating new features by combining or transforming the original features. The goal is to create a set of features that captures the essence of the original data in a lower-dimensional space. There are several methods for feature extraction, including principal component analysis (PCA), linear discriminant analysis (LDA), and t{-}distributed stochastic neighbor embedding (t{-}SNE). PCA is a popular technique that projects the original features onto a lower-dimensional space while preserving as much of the variance as possible.
         \subsubsection{Principal Component Analysis}

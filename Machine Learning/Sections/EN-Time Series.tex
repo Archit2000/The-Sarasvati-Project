@@ -1,0 +1,80 @@
+\chapterimage{orange2.jpg} % Chapter heading image
+\chapterspaceabove{6.75cm} % Whitespace from the top of the page to the chapter title on chapter pages
+\chapterspacebelow{7.25cm} % Amount of vertical whitespace from the top margin to the start of the text on chapter pages
+
+%------------------------------------------------
+
+\chapter{Time Series Data}
+    \section{Introduction}
+        Time series data is a collection of observations recorded over time in a specific order. Each observation contains a value at a particular point in time, forming a sequence that captures how a variable changes over time.
+
+        Here are some key characteristics of time series data:
+        \begin{itemize}
+            \item Ordered: The data points are ordered chronologically, emphasizing the temporal relationship between them.
+            \item Dependent: Data points at different time points can be related and influence each other.
+            \item Dynamic: The values can change over time, exhibiting trends, patterns, and seasonality.
+            \item Multi-dimensional: Time series data can have multiple dimensions, with each point recording multiple attributes simultaneously.
+        \end{itemize}
+    
+    \section{Exploratory Data Analysis}
+        \subsection{Guide}
+                Exploratory data analysis (EDA) is crucial for understanding your time series data before building a model. Here's a guide to conducting effective time series EDA:
+                \begin{itemize}
+                    \item Import Libraries:
+                        \begin{itemize}    
+                            \item Start by importing necessary libraries like Pandas, NumPy, Matplotlib, and Seaborn for data manipulation, analysis, and visualization.
+                        \end{itemize}
+                    \item Load and Inspect Data:
+                        \begin{itemize}
+                            \item Load your time series data into a DataFrame.
+                            \item Check for missing values, data types, and basic summary statistics like mean, standard deviation, etc.
+                            \item Investigate the time index format and ensure its correctness.
+                        \end{itemize}
+                    \item Visualize Trends and Seasonality:
+                        \begin{itemize}
+                            \item Plot the time series data using line charts or time series plots to observe overall trends, patterns, and potential seasonality.
+                            \item Try different time granularities (daily, weekly, monthly) to identify trends at different scales.
+                            \item Visualize rolling statistics like mean, median, and standard deviation to see how they evolve over time.
+                        \end{itemize}
+                    \item Analyze Stationarity:
+                        \begin{itemize}
+                            \item Check for stationarity, meaning the statistical properties of the data don't change over time. Non-stationary data can lead to inaccurate models.
+                            \item Use tests like Augmented Dickey-Fuller (ADF) to assess stationarity.
+                            \item Apply differencing (e.g., differencing once) to achieve stationarity if necessary.
+                        \end{itemize}
+                    \item Examine Autocorrelation and Partial Autocorrelation:
+                        \begin{itemize}
+                            \item Plot autocorrelation (ACF) and partial autocorrelation (PACF) plots to analyze the lag at which previous values influence future values.
+                            \item Identify significant lags for potential feature engineering or model selection.
+                        \end{itemize}
+                    \item Explore Decompositions:
+                        \begin{itemize}
+                            \item Perform seasonal decomposition if seasonality is evident.
+                            \item Analyze trend, seasonality, and residuals separately to understand underlying components.
+                        \end{itemize}
+                    \item Feature Engineering:
+                        \begin{itemize}
+                            \item Based on your insights, create new features like lagged values, rolling metrics, or seasonal indicators.
+                            \item These features can capture important information and improve model performance.
+                        \end{itemize}
+                    \item Anomaly Detection:
+                        \begin{itemize}
+                            \item Identify potential anomalies or outliers that might affect your model.
+                            \item Use techniques like Z-scores or isolation forests to flag unusual data points.
+                        \end{itemize}
+                    \item Document and Report:
+                        \begin{itemize}
+                            \item Document your findings and insights from the EDA in a clear and concise way.
+                            \item This helps you and others understand the data characteristics and guide model selection.
+                        \end{itemize}
+                    \item Additional Tips:
+                        \begin{itemize}
+                            \item Consider domain knowledge and specific problem context while interpreting results.
+                            \item Use interactive visualizations and tools for deeper exploration and insights.
+                            \item Compare different time series plots and statistics to understand various aspects of the data.
+                        \end{itemize}
+                    \end{itemize}
+                
+                Remember, effective EDA is crucial for setting the stage for successful time series modeling and analysis.
+
+

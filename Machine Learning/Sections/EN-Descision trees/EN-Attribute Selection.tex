@@ -8,13 +8,15 @@
             \item If it's all apples, there's no surprise when you pick one—it's always an apple. This is like a node with low entropy (more purity).
             \item If it's half apples and half oranges, there's more uncertainty—you might get either fruit. This is like a node with higher entropy (less purity).
         \end{enumerate}
-        Entropy is the measure of uncertainty of a random variable, it characterizes the impurity of an arbitrary collection of examples. The higher the entropy more the information content. Entropy can be though of as a measure of disorder or impurity in a node. 
+        Entropy is the measure of uncertainty of a random variable, it characterizes the impurity of an arbitrary collection of examples. The higher the entropy more the information content. Entropy can be thought of as a measure of disorder or impurity in a node. 
         Information Gain  = $Entropy_{Parent} - Entropy_{Children}$
+        
         Decision trees use entropy to make choices:
         \begin{enumerate}
             \item They try to split nodes into groups that are more "pure," like sorting the fruits into separate baskets.
             \item A node with high entropy (mixed fruits) is a good candidate for splitting, as it can lead to more certainty in the branches.
         \end{enumerate}
+        
         When we use a node in a decision tree to partition the training instances into smaller subsets the entropy changes. Information gain is a measure of this change in entropy.
         \begin{itemize}
             \item Suppose S is a set of instances,

@@ -1,0 +1,24 @@
+\section{Missing and Corrupted Data}
+    Missing and corrupted data are pervasive challenges in data analysis, hindering accurate interpretations and model performance. This paper explores various strategies for dealing with these issues, aiming to equip researchers and practitioners with a comprehensive toolbox for robust dataset preparation.
+    \begin{itemize}
+        \item Identifying and Assessing Missing Data
+            \begin{itemize}
+                \item Types of Missingness: Missing Completely at Random (MCAR), Missing at Random (MAR), Missing Not at Random (MNAR). Identifying the type informs appropriate techniques.
+                \item Missing Data Ratio: High rates necessitate robust methods, while low rates might justify simple removal.
+                \item Patterns and Correlations: Analyzing patterns of missingness can reveal potentially biased samples or informative features.
+            \end{itemize}
+        \item Addressing Missing Data:
+            \begin{itemize}
+                \item Deletion: Simple and efficient, but can lead to bias and information loss, especially with high missingness rates.
+                \item Imputation: Replacing missing values with estimates; Mean/Median/Mode for continuous data, Categorical Mode for nominal data, K-Nearest Neighbors or Regression Models for complex scenarios.
+                \item Multiple Imputation: Generates multiple plausible datasets with imputed values, reducing bias and providing uncertainty estimates.
+                \item Dimensionality Reduction: Techniques like Principal Component Analysis can extract latent features from complete data and use them to estimate missing values.
+            \end{itemize}
+        \item Tackling Corrupted Data:
+            \begin{itemize}
+                \item Outlier Detection: Techniques like Z-scores, Interquartile Range (IQR), or Isolation Forests identify and remove data points deviating significantly from the expected distribution.
+                \item Data Cleaning: Manual inspection and correction of obvious errors can be effective for small datasets.
+                \item Data Transformation: Scaling features, normalization, or binning can mitigate the impact of outliers and inconsistencies.
+                \item Robust Estimation: Statistical methods like Huber M-estimators are less sensitive to outliers than traditional estimators.
+            \end{itemize}
+    \end{itemize}
